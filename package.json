@@ -1,0 +1,75 @@
+{
+  "name": "@astermind/cybernetic-chatbot-client",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Offline-capable AI chatbot client with local RAG fallback and agentic capabilities for AsterMind",
+  "main": "dist/cybernetic-chatbot-client.umd.js",
+  "module": "dist/cybernetic-chatbot-client.esm.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": "./dist/cybernetic-chatbot-client.esm.js",
+      "require": "./dist/cybernetic-chatbot-client.umd.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./full": {
+      "import": "./dist/cybernetic-chatbot-client-full.esm.js",
+      "require": "./dist/cybernetic-chatbot-client-full.umd.js",
+      "types": "./dist/full.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest --coverage",
+    "lint": "eslint src/",
+    "typecheck": "tsc --noEmit",
+    "prebuild": "npm version patch --no-git-tag-version 2>/dev/null || true",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "idb": "^7.1.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-terser": "^0.4.0",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@types/node": "^20.0.0",
+    "jsdom": "^27.4.0",
+    "rollup": "^4.0.0",
+    "tslib": "^2.8.1",
+    "typescript": "^5.0.0",
+    "vitest": "^1.0.0"
+  },
+  "keywords": [
+    "chatbot",
+    "rag",
+    "ai",
+    "offline",
+    "agentic",
+    "astermind",
+    "cybernetic"
+  ],
+  "author": "AsterMind Team",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/astermind/cybernetic-chatbot-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/astermind/cybernetic-chatbot-client/issues"
+  },
+  "homepage": "https://github.com/astermind/cybernetic-chatbot-client#readme"
+}
